@@ -116,31 +116,45 @@ class BasicCalculator(object):
 
   def _equals(self):
     self.nums_inputed.append(float(self._entry.get()))
+    # If there is only one number inputed, display that number
     if len(self.nums_inputed) == 1:
       self._entry.delete(0, END)
       self._entry.insert(0, self.nums_inputed[0])
-    else:
-      pass
+    
     if self.action == '/' or self.action == 'x':
+      # Math logic behind division
       if self.action == '/':
         total = self.nums_inputed[0]
         for nums in range(len(self.nums_inputed) - 1):
           total /= self.nums_inputed[nums + 1]
         self._entry.delete(0, END)
-        print(total)
-      else:
-        pass
+      # Math logic behind multiplication
+      elif self.action == 'x':
+        total = self.nums_inputed[0]
+        for nums in range(len(self.nums_inputed) - 1):
+          total *= self.nums_inputed[nums + 1]
+        self._entry.delete(0, END)
     elif self.action == '+' or self.action == '-':
-      pass
-    else:
-        pass
+      # Math logic behind addition
+      if self.action == '+':
+        total = 0
+        for nums in range(len(self.nums_inputed)):
+          total += self.nums_inputed[nums]
+        self._entry.delete(0, END)
+      # Math logic behind subtraction
+      elif self.action == '-':
+        total = self.nums_inputed[0]
+        for nums in range(len(self.nums_inputed) - 1):
+          total -= self.nums_inputed[nums + 1]
+        self._entry.delete(0, END)
+
     if total == int(total):
       self._entry.insert(0, int(total))
     else:
       self._entry.insert(0, total)
+    self.nums_inputed = []
 
 
-  #(TO-DO): Fix - AttributeError: 'BasicCalculator' object has no attribute '_entry'
   def _one(self):
     self._entry.insert((len(self._entry.get())), '1')
 
