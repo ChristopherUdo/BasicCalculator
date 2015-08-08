@@ -2,7 +2,6 @@
 # Darian Nwankwo, August 1, 2015, Calculator App using tkinter gui
 from tkinter import *
 from tkinter import ttk
-import time
 
 
 class BasicCalculator(object):
@@ -195,11 +194,3 @@ def main():
 
 if __name__ == '__main__':
   main()
-        
-
-
-
-
-
-
-
