@@ -4,3 +4,10 @@ Dependencies:
 
 Python Tkinter module must be installed.
 http://www.activestate.com/activetcl/downloads
+
+Important:
+The calculator is my first GUI application ever. It does not have
+all of the basic functionalities of the calculator that comes installed
+on your machine.
+
+
